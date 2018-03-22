@@ -107,3 +107,4 @@ myvenv
 .mypy_cache/
 memos.db
 myvenv
+.vscode
