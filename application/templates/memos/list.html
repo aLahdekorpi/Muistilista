@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th>Memo</th>
+      <th>Importance</th>
+    </tr>
+    {% for memo in memos %}
+    <tr>
+      <td>{{ memo.name }}</td>
+      <td>{{ memo.importance }}</td>
+      <td>
+        <form method="POST" action="{{ url_for('memos_add_importance', memo_id=memo.id) }}">
+          <input type="submit" value="Add importance!"/>
+        </form>
+          </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
