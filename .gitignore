@@ -106,3 +106,4 @@ myvenv
 # mypy
 .mypy_cache/
 memos.db
+myvenv
