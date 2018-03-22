@@ -9,4 +9,4 @@ HY:n kurssille Tietokantasovellus(k2018) tehtävä harjoitustyö.
 [Tulevia toimintoja](/documentation/Coming.md)
 
 
-[Tämänhetkinen tietokantakaavio] (/documentation/Database.png)
+[Tämänhetkinen tietokantakaavio](/documentation/Database.png)
