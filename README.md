@@ -1,12 +1,19 @@
 # Muistilista
 
-HY:n kurssille Tietokantasovellus(k2018) tehtävä muistilista.
+HY:n kurssille Tietokantasovellus(k2018) tehtävä harjoitustyö.
+Sovellus löytyy osoitteesta https://unohtelijan-muistilista.herokuapp.com/
 
-Tulevia toimintoja:
+##Tämänhetkisiä käyttäjätoimintoja:
+
+Käyttäjänä voin nähdä listana tietokantaan talletetut askareet.
+Käyttäjänä voin lisätä askareita tietokantaan.
+Käyttäjänä voin lisätä askareiden tärkeyttä tietokannassa.
+
+##Tulevia toimintoja:
 
 Kirjautuminen
-Askereen lisäys, muokkaus ja poisto
-Tärkeysasteen lisäys ja poisto
+Askereen muokkaus ja poisto
+Tärkeysasteen poisto
 Askareen tärkeyttäminen lisäyksessä tai myöhemmin
 Luokkien lisäys ja poisto
 Askareiden luokittelu
