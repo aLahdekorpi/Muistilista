@@ -1,16 +1,20 @@
 from application import app, db
 from flask import redirect, render_template, request, url_for
 from application.memos.models import Memo
+from application.memos.forms import MemoForm
+from flask_login import login_required, current_user
 
 @app.route("/memos", methods=["GET"])
 def memos_index():
     return render_template("memos/list.html", memos = Memo.query.all())
 
 @app.route("/memos/new/")
+@login_required
 def memos_form():
-    return render_template("/memos/new.html")
+    return render_template("/memos/new.html", form = MemoForm())
 
 @app.route("/memos/<memo_id>/", methods=["POST"])
+@login_required
 def memos_add_importance(memo_id):
 
     m = Memo.query.get(memo_id)
@@ -20,8 +24,14 @@ def memos_add_importance(memo_id):
     return redirect(url_for("memos_index"))
 
 @app.route("/memos/", methods=["POST"])
+@login_required
 def memos_create():
-    m = Memo(request.form.get("name"))
+    form = MemoForm(request.form)
+    if not form.validate():
+        return render_template("memos/new.html", form = form)
+
+    m = Memo(form.name.data)
+    m.account_id = current_user.id
 
     db.session().add(m)
     db.session().commit()
