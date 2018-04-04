@@ -13,7 +13,7 @@ def memos_index():
 def memos_show_one(memo_id):
     return render_template("memos/list.html", memos = Memo.query.get(memo_id))   
 
-@app.route("/memos/<memo_id>/", methods=["DELETE"])
+@app.route("/memos/delete/<memo_id>/", methods=["POST"])
 @login_required
 def memos_delete_one(memo_id):
     Memo.query.delete(memo_id)
