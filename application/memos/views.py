@@ -8,6 +8,11 @@ from flask_login import login_required, current_user
 def memos_index():
     return render_template("memos/list.html", memos = Memo.query.all())
 
+@app.route("/memos/<memo_id>/", methods=["GET"])
+@login_required
+def memos_show_one(memo_id):
+    return render_template("memos/list.html", memos = Memo.query.get(memo_id))   
+
 @app.route("/memos/new/")
 @login_required
 def memos_form():
