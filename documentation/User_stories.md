@@ -1,7 +1,10 @@
 # Tämänhetkisiä käyttäjätoimintoja:
 
-* Käyttäjänä voin nähdä listana tietokantaan talletetut askareet.
-* Käyttäjänä voin lisätä askareita tietokantaan.
-* Käyttäjänä voin lisätä askareiden tärkeyttä tietokannassa.
+* Käyttäjänä voin rekisteröityä sovellukseen.
+
+* Kirjautuneena käyttäjänä voin nähdä listana tietokantaan talletetut askareet.
+* Kirjautuneena käyttäjänä voin lisätä askareita tietokantaan.
+* Kirjautuneena käyttäjänä voin lisätä askareiden tärkeyttä tietokannassa.
+
 
 
