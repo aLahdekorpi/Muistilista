@@ -1,7 +1,21 @@
 {% extends "layout.html" %}
 
 {% block body %}
+
+
+{% if needs_memos is defined %}
 <p>
-  Hei maailma!
+  Seuraavilla käyttäjillä ei ole muistettavaa:
 </p>
+
+<ul>
+  {% for user in needs_memos %}
+  <li>
+    {{user.id}} {{user.name}}
+  </li>
+  {% endfor %}
+</ul>
+
+{% endif %}
+
 {% endblock %}

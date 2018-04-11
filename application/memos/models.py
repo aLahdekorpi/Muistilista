@@ -7,7 +7,9 @@ class Memo(Base):
     importance = db.Column(db.Integer, nullable=False)
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'),
                         nullable=False)
+    category_id = db.Column(db.Integer, db.ForeignKey('category.id'))                    
 
     def __init__(self, name):
         self.name = name
         self.importance = 0
+        self.category_id = 99

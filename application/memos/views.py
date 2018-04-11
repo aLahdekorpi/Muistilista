@@ -2,6 +2,7 @@ from application import app, db
 from flask import redirect, render_template, request, url_for
 from application.memos.models import Memo
 from application.memos.forms import MemoForm
+from application.categories.models import Category
 from flask_login import login_required, current_user
 
 @app.route("/memos", methods=["GET"])

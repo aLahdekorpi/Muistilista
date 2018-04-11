@@ -4,15 +4,17 @@
   <table>
     <tr>
       <th>Memo</th>
-      <th>Importance</th>
+      <th>Tärkeys</th>
+      <th>Luokka(id)</th>
     </tr>
     {% for memo in memos %}
     <tr>
       <td>{{ memo.name }}</td>
       <td>{{ memo.importance }}</td>
+      <td>{{ memo.category_id }}</td>
       <td>
         <form method="POST" action="{{ url_for('memos_add_importance', memo_id=memo.id) }}">
-          <input type="submit" value="Add importance!"/>
+          <input type="submit" value="Lisää tärkeyttä!"/>
         </form>
           </td>
     </tr>

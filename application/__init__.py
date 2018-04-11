@@ -7,7 +7,7 @@ import os
 if os.environ.get("HEROKU"):
     app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
 else:
-    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///tasks.db"    
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///memos.db"    
     app.config["SQLALCHEMY_ECHO"] = True
 
 db = SQLAlchemy(app)
@@ -18,6 +18,8 @@ from application.memos import models
 from application.memos import views
 from application.auth import models 
 from application.auth import views
+from application.categories import models
+from application.categories import views
 
 # kirjautuminen
 from application.auth.models import User
