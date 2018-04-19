@@ -16,7 +16,12 @@
         <form method="POST" action="{{ url_for('memos_add_importance', memo_id=memo.id) }}">
           <input type="submit" value="Lisää tärkeyttä!"/>
         </form>
-          </td>
+      </td>
+      <td>
+        <form method="POST" action="{{ url_for('memos_delete_one', memo_id=memo.id) }}">
+          <input type="submit" value="Poista"/>
+        </form>
+      </td>
     </tr>
     {% endfor %}
   </table>

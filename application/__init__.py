@@ -14,12 +14,12 @@ db = SQLAlchemy(app)
 
 from application import views
 
-from application.memos import models
-from application.memos import views
+
 from application.auth import models 
 from application.auth import views
 from application.categories import models
 from application.categories import views
+from application.roles import models
 
 # kirjautuminen
 from application.auth.models import User
@@ -32,6 +32,9 @@ login_manager.setup_app(app)
 
 login_manager.login_view = "auth_login"
 login_manager.login_message = "Please login to use this functionality."
+
+from application.memos import models
+from application.memos import views
 
 @login_manager.user_loader
 def load_user(user_id):

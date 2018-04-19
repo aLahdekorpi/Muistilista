@@ -11,11 +11,14 @@ class User(Base):
     username = db.Column(db.String(144), nullable=False)
     password = db.Column(db.String(144), nullable=False)
     memos = db.relationship("Memo", backref='account', lazy=True)
+    role_id = db.Column(db.Integer, db.ForeignKey('role.id'),
+                        nullable=False)
 
     def __init__(self, name, username, password):
         self.name = name
         self.username = username
         self.password = password
+        self.role_id = 1
   
     def get_id(self):
         return self.id
@@ -28,6 +31,7 @@ class User(Base):
 
     def is_authenticated(self):
         return True
+    
 
     @staticmethod
     def find_users_no_memos():

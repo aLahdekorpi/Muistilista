@@ -1,4 +1,4 @@
-from application import app, db
+from application import app, db, login_manager
 from flask import redirect, render_template, request, url_for
 from application.memos.models import Memo
 from application.memos.forms import MemoForm
@@ -17,7 +17,9 @@ def memos_show_one(memo_id):
 @app.route("/memos/delete/<memo_id>/", methods=["POST"])
 @login_required
 def memos_delete_one(memo_id):
-    Memo.query.delete(memo_id)
+    if current_user.role_id != 0:
+        return login_manager.unauthorized()
+    Memo.delete_memo(memo_id)
     return render_template("memos/list.html", memos = Memo.query.all())
 
 @app.route("/memos/new/")
