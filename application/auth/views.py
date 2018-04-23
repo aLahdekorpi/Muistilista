@@ -39,7 +39,7 @@ def auth_register():
         return render_template("auth/registerform.html", form = form,
                                 error = "Already exists!")
 
-    u = User(form.name.data, form.username.data, form.password.data)
+    u = User(form.name.data, form.username.data, form.password.data, 1)
     db.session().add(u)
     db.session().commit()
     return redirect(url_for("index")) 
