@@ -51,3 +51,18 @@ def memos_create():
     db.session().commit()
   
     return redirect(url_for("memos_index"))
+
+@app.route("/memos/edit/<memo_id>/", methods=["GET" ,"POST"])
+@login_required
+def memos_edit_one(memo_id):
+    memoToEdit = Memo.query.filter_by(id=memo_id).first()  
+
+    if request.method == "GET":
+        return render_template("memos/edit.html", memo_id = memo_id, memoToEdit = memoToEdit, form = MemoForm())
+
+    form = MemoForm(request.form)
+    memoToEdit.name = form.name.data
+
+    db.session.commit()
+
+    return redirect(url_for("memos_index"))    

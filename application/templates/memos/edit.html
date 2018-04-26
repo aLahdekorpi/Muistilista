@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{%block body%}
+<form method="POST" action="{{ url_for('memos_edit_one', memo_id = memo_id) }}">
+<table>
+    <r>
+        Edit : {{memoToEdit.name}}
+    </r>
+    <tr>
+        <td>
+      {{ form.name.label }}
+        </td>
+        <td>
+      {{ form.name }}
+        </td>
+    </tr>
+    <td colspan="2">
+        <input type="submit" value="Edit Memo"/>
+    </td>
+</table>
+</form>
+{% endblock %}
