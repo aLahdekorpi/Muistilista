@@ -9,12 +9,17 @@
     </tr>
     {% for memo in memos %}
     <tr>
-      <td>{{ memo.name }}</td>
+      <td><a href="{{ url_for('memos_show_one', memo_id = memo.id) }}">{{memo.name}}</a></td>
       <td>{{ memo.importance }}</td>
       <td>{{ memo.category_id }}</td>
       <td>
         <form method="POST" action="{{ url_for('memos_add_importance', memo_id=memo.id) }}">
           <input type="submit" value="Lisää tärkeyttä!"/>
+        </form>
+      </td>
+      <td>
+        <form method="POST" action="{{ url_for('memos_subtract_importance', memo_id=memo.id) }}">
+          <input type="submit" value="Vähennä tärkeyttä!"/>
         </form>
       </td>
       <td>

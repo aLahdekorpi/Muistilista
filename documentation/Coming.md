@@ -1,7 +1,5 @@
 # Tulevia toimintoja:
 
-* Askereen muokkaus
-* Tärkeysasteen poisto
 * Askareen tärkeyttäminen lisäyksessä tai myöhemmin
 * Luokkien lisäys ja poisto
 * Admin-roolien lisäys ja poisto

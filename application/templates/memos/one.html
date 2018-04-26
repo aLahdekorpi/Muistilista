@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<table>
+<tr>
+<th>Memo</th>
+<th>Tärkeys</th>
+<th>Luokka(id)</th>
+              </tr>
+<tr>
+    <td>{{ memo.name }}</td>
+    <td>{{ memo.importance }}</td>
+    <td>{{ memo.category_id }}</td>
+    <td>
+      <form method="POST" action="{{ url_for('memos_add_importance', memo_id=memo.id) }}">
+        <input type="submit" value="Lisää tärkeyttä!"/>
+      </form>
+    </td>
+    <td>
+      <form method="POST" action="{{ url_for('memos_subtract_importance', memo_id=memo.id) }}">
+        <input type="submit" value="Vähennä tärkeyttä!"/>
+      </form>
+    </td>
+    <td>
+      <form method="GET" action="{{ url_for('memos_edit_one', memo_id=memo.id) }}">
+        <input type="submit" value="Muokkaa"/>
+      </form>
+    </td>
+    <td>
+      <form method="POST" action="{{ url_for('memos_delete_one', memo_id=memo.id) }}">
+        <input type="submit" value="Poista"/>
+      </form>
+    </td>
+  </tr>
+</table>
+{% endblock %}
