@@ -2,6 +2,8 @@
 
 HY:n kurssille Tietokantasovellus(k2018) tehtävä harjoitustyö.
 
+Sovelluksella voit luoda itsellesi muistiinpanoja, tärkeyttää niitä ja jakaa niitä luokkiin.
+
 
 [Sovellus verkossa](https://unohtelijan-muistilista.herokuapp.com/)
 
@@ -9,7 +11,4 @@ HY:n kurssille Tietokantasovellus(k2018) tehtävä harjoitustyö.
 [Tämänhetkisiä toimintoja](/documentation/User_stories.md)
 
 
-[Tulevia toimintoja](/documentation/Coming.md)
-
-
-[Tämänhetkinen tietokantakaavio](/documentation/Database.png)
+[Tietokantakaavio](/documentation/Database.png)

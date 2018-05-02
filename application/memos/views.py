@@ -9,7 +9,7 @@ from flask_login import login_required, current_user
 def memos_index():
     memos = Memo.query.all()
     memos.sort(key=lambda Memo: Memo.importance, reverse = True)
-    return render_template("memos/list.html", memos = memos)
+    return render_template("memos/list.html", memos = memos, categories = Category.query.all())
 
 @app.route("/memos/<memo_id>/", methods=["GET"])
 @login_required

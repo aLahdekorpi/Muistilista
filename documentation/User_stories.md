@@ -9,6 +9,7 @@
 * Kirjautuneena käyttäjänä voin lisätä ja vähentää askareiden tärkeyttä tietokannassa, askareen näytetään tärkeysjärjestyksessä.
 * Kirjautuneena käyttäjänä voin kirjautua ulos.
 * Kirjautuneena käyttäjänä voin nähdä yksittäisen askareen.
+* Kirjautuneena käyttäjänä voin lisätä uusia luokkia
 
 * Kirjautuneena superkäyttäjänä voin poistaa yksittäisiä askareita.
 
